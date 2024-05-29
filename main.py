@@ -1,7 +1,9 @@
 from flask import Flask, request, jsonify
 import random
+from flask_cors import CORS
 
 app = Flask(__name__)
+CORS(app)
 
 # Sample question-answer pairs for each endpoint (replace with your actual data)
 no_rag_data = [
