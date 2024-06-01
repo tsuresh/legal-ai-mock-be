@@ -63,8 +63,17 @@ def hil_rag_query():
 @app.route('/hil_rag_query', methods=['POST'])
 def hil_rag():
     return jsonify({
+        "response": [
+            {
         "casename": "Rule 7",
         "caseyear": "2008",
+        "casesummary": "The petitioner had not been successful in establishing that the respondents had violated her fundamental right guaranteed in terms of Article 12(1) of the Constitution.",
+        "lawactslist": ["Constitution", "Article 12(1)", "Article 12(1) of the Constitution"],
+        "casekeywords": ["Fundamental Rights", "Article 12(1)", "Constitution"],
+        "question": "What was the outcome of the case?",
+        "snippet": "The petitioner had not been successful in establishing that the respondents had violated her fundamental right guaranteed in terms of Article 12(1) of the Constitution.",
+        "answer": "The petitioner had not been successful in establishing that the respondents had violated her fundamental right guaranteed in terms of Article 12(1) of the Constitution.",
+        "identifier": 17,
         "metadata": {
             "courtDetails": {
                 "courtName": "Supreme Court of the Democratic Socialist Republic of Sri Lanka",
@@ -163,6 +172,8 @@ def hil_rag():
                 "judgmentSummary": "The petitioner had not been successful in establishing that the respondents had violated her fundamental right guaranteed in terms of Article 12(1) of the Constitution."
             }
         }
+    }
+        ]
     })
 
 
