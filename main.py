@@ -35,7 +35,7 @@ def no_rag():
         return jsonify({'error': 'Missing question data in JSON body'}), 400
 
     answer = get_random_answer(no_rag_data)
-    return jsonify({'response': answer})
+    return jsonify({'response': answer, 'sources': ['https://www.lawnet.gov.lk/2008/12/31/walawe-durage-dulani-v-nimal-bandara-and-others/']})
 
 
 @app.route('/auto_rag', methods=['POST'])
@@ -46,10 +46,10 @@ def auto_rag():
         return jsonify({'error': 'Missing question data in JSON body'}), 400
 
     answer = get_random_answer(auto_rag_data)
-    return jsonify({'response': answer})
+    return jsonify({'response': answer, 'sources': ['https://www.lawnet.gov.lk/2008/12/31/walawe-durage-dulani-v-nimal-bandara-and-others/']})
 
 
-@app.route('/hil_rag_query', methods=['POST'])
+@app.route('/hil_rag', methods=['POST'])
 def hil_rag_query():
     """Handles POST requests to the /hil_rag_query endpoint."""
     question_data = request.get_json()
@@ -57,10 +57,10 @@ def hil_rag_query():
         return jsonify({'error': 'Missing question data in JSON body'}), 400
 
     answer = get_random_answer(hil_rag_query_data)
-    return jsonify({'response': answer})
+    return jsonify({'response': answer, 'sources': ['https://www.lawnet.gov.lk/2008/12/31/walawe-durage-dulani-v-nimal-bandara-and-others/']})
 
 
-@app.route('/hil_rag', methods=['POST'])
+@app.route('/hil_rag_query', methods=['POST'])
 def hil_rag():
     return jsonify({
         "casename": "Rule 7",
